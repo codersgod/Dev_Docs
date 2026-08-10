@@ -1,0 +1,343 @@
+{
+  "javascript": {
+    "title": "JavaScript",
+    "icon": "JS",
+    "color": "#F7DF1E",
+    "description": "The language of the web — master its quirks and power.",
+    "chapters": [
+      {
+        "id": "js-core-fundamentals",
+        "title": "1. Core Fundamentals & Basics",
+        "topics": [
+          { "name": "Data Types", "slug": "js-data-types", "desc": "Primitives vs reference types, typeof, and type coercion." },
+          { "name": "Operators & Coercion", "slug": "js-operators-coercion", "desc": "== vs ===, implicit/explicit casting, and truthy/falsy." },
+          { "name": "Variable Declarations", "slug": "js-variable-declarations", "desc": "var, let, const — scope, hoisting, and redeclaration rules." },
+          { "name": "Memory & References", "slug": "js-memory-references", "desc": "Pass by value vs pass by reference in memory allocation." }
+        ]
+      },
+      {
+        "id": "js-objects-arrays",
+        "title": "2. Objects & Arrays Deep Dive",
+        "topics": [
+          { "name": "Objects Fundamentals", "slug": "js-objects", "desc": "Syntax, property types, access patterns, creation methods, and Object API." },
+          { "name": "Arrays Fundamentals", "slug": "js-arrays", "desc": "Array creation, methods, iteration, mutation, and typed arrays." }
+        ]
+      },
+      {
+        "id": "js-scope-closures",
+        "title": "3. Scope, Closures & Execution Context",
+        "topics": [
+          { "name": "Hoisting", "slug": "js-hoisting", "desc": "Variable and function declaration elevation at compile phase." },
+          { "name": "Scope Chain", "slug": "js-scope-chain", "desc": "Global, function, and block scopes with lexical scoping." },
+          { "name": "Closures", "slug": "js-closures", "desc": "Functions retaining access to their lexical scope." },
+          { "name": "Temporal Dead Zone", "slug": "js-tdz", "desc": "The TDZ window for let and const before initialization." }
+        ]
+      },
+      {
+        "id": "js-functions-objects",
+        "title": "4. Functions & Objects",
+        "topics": [
+          { "name": "This Keyword", "slug": "js-this-keyword", "desc": "Dynamic binding in methods, arrow functions, and global scope." },
+          { "name": "Arrow Functions", "slug": "js-arrow-functions", "desc": "Syntax constraints, no this/arguments/super binding." },
+          { "name": "Explicit Binding", "slug": "js-explicit-binding", "desc": "call(), apply(), and bind() invocation patterns." },
+          { "name": "Functional Programming", "slug": "js-functional-programming", "desc": "HOFs, currying, pure functions, and IIFEs." },
+          { "name": "Prototypes", "slug": "js-prototypes", "desc": "Prototype chain, __proto__, and prototypal inheritance." }
+        ]
+      },
+      {
+        "id": "js-async-runtime",
+        "title": "5. Asynchronous JavaScript & Runtime",
+        "topics": [
+          { "name": "Event Loop", "slug": "js-event-loop", "desc": "Call Stack, Web APIs, Macrotask Queue, and Microtask Queue." },
+          { "name": "Promises", "slug": "js-promises", "desc": "States, chaining, and combinators — all, race, allSettled, any." },
+          { "name": "Async / Await", "slug": "js-async-await", "desc": "Sequential vs parallel execution and async error handling." }
+        ]
+      },
+      {
+        "id": "js-oop-patterns",
+        "title": "6. OOP & Modern Engineering Patterns",
+        "topics": [
+          { "name": "Classes & OOP", "slug": "js-classes-oop", "desc": "Private fields, getters/setters, static methods, inheritance." },
+          { "name": "Modules", "slug": "js-modules", "desc": "CommonJS (require) vs ES Modules (import/export) differences." },
+          { "name": "Design Patterns", "slug": "js-design-patterns", "desc": "Module, Singleton, Factory, and Observer (Pub/Sub) patterns." }
+        ]
+      },
+      {
+        "id": "js-memory-performance",
+        "title": "7. Memory, Performance & Data Structures",
+        "topics": [
+          { "name": "Garbage Collection", "slug": "js-garbage-collection", "desc": "Mark-and-sweep, memory leaks, and profiling." },
+          { "name": "Debounce & Throttle", "slug": "js-debounce-throttle", "desc": "High-performance utilities for high-frequency events." },
+          { "name": "Deep vs Shallow Clone", "slug": "js-cloning", "desc": "structuredClone(), JSON fallback, and recursive deep copy." },
+          { "name": "Map, Set, WeakMap, WeakSet", "slug": "js-collections", "desc": "Advanced collections and weak reference garbage collection." },
+          { "name": "Iterators & Generators", "slug": "js-iterators-generators", "desc": "Symbol.iterator, custom iterables, and function* with yield." },
+          { "name": "Proxy & Reflect", "slug": "js-proxy-reflect", "desc": "Intercepting and redefining object behaviors with meta-programming." }
+        ]
+      },
+      {
+        "id": "js-polyfills-machine-coding",
+        "title": "8. Polyfills & Machine Coding",
+        "topics": [
+          { "name": "Custom Polyfills", "slug": "js-polyfills", "desc": "Promise.all, Array.flat, Function.bind, deep clone from scratch." },
+          { "name": "Complex UI Components", "slug": "js-ui-components", "desc": "Autocomplete, infinite scroll, nested comments from scratch." },
+          { "name": "LRU Cache", "slug": "js-lru-cache", "desc": "Implementing a Least Recently Used cache for browser caching." }
+        ]
+      },
+      {
+        "id": "js-system-design",
+        "title": "9. Frontend System Design & Architecture",
+        "topics": [
+          { "name": "Micro-Frontends", "slug": "js-micro-frontends", "desc": "Build-time vs run-time integration with Module Federation." },
+          { "name": "State Management Architecture", "slug": "js-state-architecture", "desc": "Normalized state, trade-offs between Redux, Zustand, and Signals." },
+          { "name": "Monorepos", "slug": "js-monorepos", "desc": "Turborepo, Lerna, Nx for multi-package dependency graphs." },
+          { "name": "Rendering Strategies", "slug": "js-rendering-strategies", "desc": "CSR, SSR, SSG, and ISR trade-offs and when to use each." }
+        ]
+      },
+      {
+        "id": "js-web-vitals",
+        "title": "10. Core Web Vitals & Performance",
+        "topics": [
+          { "name": "Core Web Vitals", "slug": "js-core-web-vitals", "desc": "CLS, INP, and LCP — measuring and solving performance issues." },
+          { "name": "Resource Prioritization", "slug": "js-resource-hints", "desc": "preload, prefetch, preconnect, and prerender asset hints." },
+          { "name": "Network & Asset Tuning", "slug": "js-asset-optimization", "desc": "WebP/AVIF, responsive images, code splitting, and bundle chunking." }
+        ]
+      },
+      {
+        "id": "js-browser-apis",
+        "title": "11. Advanced Web Platform APIs",
+        "topics": [
+          { "name": "Web Workers & Service Workers", "slug": "js-workers", "desc": "Off-main-thread execution and offline caching strategies." },
+          { "name": "Observability APIs", "slug": "js-observers", "desc": "IntersectionObserver, MutationObserver, and ResizeObserver." },
+          { "name": "requestAnimationFrame", "slug": "js-raf", "desc": "Synchronizing animations with the browser's repaint cycle." },
+          { "name": "Browser Storage", "slug": "js-browser-storage", "desc": "LocalStorage, SessionStorage, IndexedDB, and Cookies compared." },
+          { "name": "Event Architecture", "slug": "js-events", "desc": "Bubbling, capturing, and scaling with Event Delegation." },
+          { "name": "Fetch & AbortController", "slug": "js-fetch-abort", "desc": "Resilient data fetching, timeouts, cancellation, and WebSockets." }
+        ]
+      },
+      {
+        "id": "js-security",
+        "title": "12. Enterprise Frontend Security",
+        "topics": [
+          { "name": "Content Security Policy", "slug": "js-csp", "desc": "Fine-tuning CSP headers to mitigate injection attacks." },
+          { "name": "Secure Token Management", "slug": "js-token-security", "desc": "Access/refresh tokens — HttpOnly cookies vs LocalStorage risks." },
+          { "name": "Input Sanitization & XSS", "slug": "js-xss-sanitization", "desc": "Sanitizing user inputs to counter modern XSS bypass vectors." }
+        ]
+      }
+    ]
+  },
+  "react": {
+    "title": "React.js",
+    "icon": "Re",
+    "color": "#61DAFB",
+    "description": "Component-based UI architecture for the modern web.",
+    "chapters": [
+      {
+        "id": "react-fundamentals",
+        "title": "1. React Fundamentals",
+        "topics": [
+          { "name": "JSX (JavaScript XML)", "slug": "jsx-syntax", "desc": "Syntax rules, embedding expressions, and HTML attribute differences." },
+          { "name": "Components", "slug": "functional-components", "desc": "Functional components, class components, and self-closing tags." },
+          { "name": "Fragments", "slug": "fragments", "desc": "Grouping children without adding extra wrapper nodes to the DOM." },
+          { "name": "Props", "slug": "props-passing", "desc": "Passing data, destructuring, read-only nature, defaults, and children prop." },
+          { "name": "Rendering Basics", "slug": "rendering-conditional", "desc": "Root node, element rendering, and conditional rendering methods." },
+          { "name": "Lists & Keys", "slug": "lists-keys", "desc": "Mapping arrays to JSX, stability, and unique key requirements." }
+        ]
+      },
+      {
+        "id": "state-and-lifecycle",
+        "title": "2. State & Lifecycle Management",
+        "topics": [
+          { "name": "useState Hook", "slug": "use-state-hook", "desc": "State initialization, atomic updates, and functional state updates." },
+          { "name": "Component Lifecycle", "slug": "component-lifecycle", "desc": "Mounting, updating, unmounting phases, and execution order." },
+          { "name": "useEffect Hook", "slug": "use-effect-hook", "desc": "Side-effect management, dependency arrays, and clean-up functions." },
+          { "name": "State Structuring", "slug": "state-management-basics", "desc": "Lifting state up, co-location, controlled vs. uncontrolled components." },
+          { "name": "State Batching", "slug": "state-batching", "desc": "Automatic batching for multiple updates in single or async events." }
+        ]
+      },
+      {
+        "id": "all-hooks-apis",
+        "title": "3. All Built-In React Hooks & APIs",
+        "topics": [
+          { "name": "Built-in Hooks Overview", "slug": "built-in-hooks", "desc": "useRef, useMemo, useCallback, useReducer, and useContext foundations." },
+          { "name": "Rules of Hooks", "slug": "rules-of-hooks", "desc": "Top-level only, React functions only — enforced by ESLint." },
+          { "name": "Custom Hooks", "slug": "custom-hooks", "desc": "Extracting and sharing stateful logic with reusable functions." },
+          { "name": "State & Reducers", "slug": "state-reducers", "desc": "useState, useReducer for complex action-driven state transitions." },
+          { "name": "Context API", "slug": "context-api", "desc": "createContext, useContext, and React 19 direct Context providers." },
+          { "name": "DOM & Mutable Refs", "slug": "refs-dom", "desc": "useRef and React 19 ref as a regular prop (no forwardRef needed)." },
+          { "name": "Performance Memoization", "slug": "memoization", "desc": "useMemo for caching computations, useCallback for function instances." },
+          { "name": "Layout & Timing", "slug": "layout-timing-hooks", "desc": "useLayoutEffect (synchronous) and useInsertionEffect (style injection)." },
+          { "name": "Concurrent Rendering", "slug": "concurrent-hooks", "desc": "useTransition for non-blocking transitions, useDeferredValue for slow UI." },
+          { "name": "Modern Form Actions (React 19+)", "slug": "form-actions-hooks", "desc": "useActionState, useFormStatus, and useOptimistic for immediate UI updates." },
+          { "name": "React 18/19 Advanced Hooks", "slug": "react-18-hooks", "desc": "Deep dive into useTransition, useDeferredValue, useOptimistic, and use." },
+          { "name": "System & Resource Reading", "slug": "system-hooks", "desc": "useId, useSyncExternalStore, useDebugValue, and use for promises/context." }
+        ]
+      },
+      {
+        "id": "advanced-concepts",
+        "title": "4. Advanced Component Concepts & Architecture",
+        "topics": [
+          { "name": "Portals", "slug": "portals", "desc": "Rendering JSX into a separate DOM node to break layout limitations." },
+          { "name": "Error Boundaries", "slug": "error-boundaries", "desc": "Class components implementing getDerivedStateFromError and componentDidCatch." },
+          { "name": "Higher-Order Components (HOC)", "slug": "higher-order-components", "desc": "Reusing component logic with wrapper functions (legacy pattern)." },
+          { "name": "Suspense API", "slug": "suspense-api", "desc": "Suspense wrapper for fallback loaders during data fetching or code splitting." },
+          { "name": "Native Asset Injection", "slug": "native-asset-injection", "desc": "First-class support for loading stylesheets, scripts, and metadata." }
+        ]
+      },
+      {
+        "id": "core-engine-mechanics",
+        "title": "5. Core Engine Mechanics (Under the Hood)",
+        "topics": [
+          { "name": "Virtual DOM & Reconciliation", "slug": "virtual-dom-reconciliation", "desc": "Virtual tree representation and efficient diffing algorithm." },
+          { "name": "Fiber Architecture", "slug": "fiber-architecture", "desc": "React's core engine redesign enabling incremental, interruptible rendering." },
+          { "name": "Concurrent Rendering Engine", "slug": "concurrent-rendering-engine", "desc": "Interruptible rendering that pauses to prioritize urgent user actions." },
+          { "name": "Synthetic Events System", "slug": "synthetic-events", "desc": "Cross-browser normalization and event delegation for optimized memory usage." },
+          { "name": "Server-Side Hydration", "slug": "server-hydration", "desc": "Reviving server-rendered HTML by attaching client-side event listeners." },
+          { "name": "The React Compiler", "slug": "react-compiler", "desc": "Automating optimizations by analyzing code and injecting memoization." }
+        ]
+      },
+      {
+        "id": "component-design-patterns",
+        "title": "6. Component Design Patterns",
+        "topics": [
+          { "name": "Compound Components", "slug": "compound-components", "desc": "Component families sharing implicit state for flexible interfaces." },
+          { "name": "Control Props Pattern", "slug": "control-props-pattern", "desc": "Switching between uncontrolled and parent-driven controlled configurations." },
+          { "name": "Render Props", "slug": "render-props", "desc": "Passing rendering control to a child function prop (legacy pattern)." },
+          { "name": "Container & Presentational", "slug": "container-presentational", "desc": "Segregating data/logic from purely visual, UI-only components." }
+        ]
+      },
+      {
+        "id": "performance-optimization",
+        "title": "7. Performance Optimization Techniques",
+        "topics": [
+          { "name": "Pure vs. Impure Components", "slug": "pure-impure-components", "desc": "Understanding component purity for predictable rendering and optimization." },
+          { "name": "Re-render Prevention", "slug": "re-render-prevention", "desc": "React.memo alongside useCallback and useMemo for shallow prop comparison." },
+          { "name": "Code Splitting", "slug": "code-splitting", "desc": "React.lazy with Suspense to reduce initial JavaScript bundle sizes." },
+          { "name": "Strict Mode", "slug": "strict-mode", "desc": "Development wrapper double-invoking effects to catch side effects." }
+        ]
+      },
+      {
+        "id": "global-ecosystem-scaling",
+        "title": "8. Global Ecosystem & Scaling",
+        "topics": [
+          { "name": "Routing", "slug": "react-router", "desc": "Page navigation, nested layouts, protected routes, and dynamic URL params." },
+          { "name": "Global State Architecture", "slug": "global-state-management", "desc": "Redux Toolkit, Zustand, Recoil, or MobX for application-wide state." },
+          { "name": "Asynchronous Data Fetching", "slug": "data-fetching", "desc": "Server cache management, mutations, and pagination with TanStack Query or SWR." },
+          { "name": "Styling Paradigms", "slug": "styling-approaches", "desc": "CSS Modules, Styled Components, Tailwind CSS, or Vanilla CSS." },
+          { "name": "Production Architecture", "slug": "production-architecture", "desc": "Feature-Sliced Design (FSD), Monorepos (Turborepo/Nx), and Micro-Frontends." }
+        ]
+      },
+      {
+        "id": "server-frameworks-deployment",
+        "title": "9. Server Frameworks & Deployment",
+        "topics": [
+          { "name": "Server-Side Rendering (SSR)", "slug": "server-side-rendering", "desc": "Rendering React on the server for instant page loads and SEO." },
+          { "name": "Static Site Generation (SSG)", "slug": "static-site-generation", "desc": "Pre-rendering pages at build time for maximum performance." },
+          { "name": "Hybrid Frameworks", "slug": "hybrid-frameworks", "desc": "Next.js and Remix for full-stack React applications." },
+          { "name": "Rendering Strategies", "slug": "rendering-strategies", "desc": "SSR, SSG, CSR, and Incremental Static Regeneration (ISR)." },
+          { "name": "React Server Components", "slug": "react-server-components", "desc": "Zero-bundle-size components executing strictly on the server." },
+          { "name": "Testing & Deployment", "slug": "testing-deployment", "desc": "Unit, integration, and E2E tests with Jest, React Testing Library, Playwright, or Cypress." }
+        ]
+      }
+    ]
+  },
+  "typescript": {
+    "title": "TypeScript",
+    "icon": "TS",
+    "color": "#3178C6",
+    "description": "Typed superset of JavaScript for scalable applications.",
+    "chapters": [
+      {
+        "id": "ts-basics",
+        "title": "1. Type Basics",
+        "topics": [
+          {
+            "name": "Primitive Types",
+            "slug": "primitive-types",
+            "desc": "string, number, boolean, null, undefined, symbol, and bigint."
+          },
+          {
+            "name": "Interfaces & Types",
+            "slug": "interfaces-types",
+            "desc": "Defining object shapes, differences between interface and type alias."
+          },
+          {
+            "name": "Generics",
+            "slug": "generics",
+            "desc": "Writing reusable, type-safe functions and components."
+          }
+        ]
+      },
+      {
+        "id": "ts-advanced",
+        "title": "2. Advanced Types",
+        "topics": [
+          {
+            "name": "Union & Intersection",
+            "slug": "union-intersection",
+            "desc": "Combining types with | and & for flexible type definitions."
+          },
+          {
+            "name": "Utility Types",
+            "slug": "utility-types",
+            "desc": "Partial, Required, Readonly, Pick, Omit, Record, and ReturnType."
+          },
+          {
+            "name": "Type Narrowing",
+            "slug": "type-narrowing",
+            "desc": "typeof, instanceof, discriminated unions, and type predicates."
+          }
+        ]
+      }
+    ]
+  },
+  "nextjs": {
+    "title": "Next.js",
+    "icon": "N",
+    "color": "#ffffff",
+    "description": "The React framework for production — SSR, SSG, and beyond.",
+    "chapters": [
+      {
+        "id": "nextjs-routing",
+        "title": "1. App Router",
+        "topics": [
+          {
+            "name": "File-based Routing",
+            "slug": "file-based-routing",
+            "desc": "Understanding the app/ directory, pages, layouts, and route segments."
+          },
+          {
+            "name": "Dynamic Routes",
+            "slug": "dynamic-routes",
+            "desc": "Using [slug], [...catchAll], and [[...optional]] segments."
+          },
+          {
+            "name": "Layouts",
+            "slug": "layouts",
+            "desc": "Persistent UI with layout.tsx and nested layouts for sections."
+          }
+        ]
+      },
+      {
+        "id": "nextjs-data",
+        "title": "2. Data & Rendering",
+        "topics": [
+          {
+            "name": "Server Components",
+            "slug": "server-components",
+            "desc": "Fetching data on the server, streaming, and caching strategies."
+          },
+          {
+            "name": "Client Components",
+            "slug": "client-components",
+            "desc": "use client directive, interactivity, and hydration boundaries."
+          },
+          {
+            "name": "generateStaticParams",
+            "slug": "generate-static-params",
+            "desc": "Pre-rendering dynamic routes at build time for static export."
+          }
+        ]
+      }
+    ]
+  }
+}
