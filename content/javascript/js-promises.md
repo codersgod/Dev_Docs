@@ -85,6 +85,94 @@ Promise.any([p1, p2, p3]);         // first to FULFILL wins — rejects only if 
 | `Promise.race` | First to settle | First to reject |
 | `Promise.any` | First to fulfill | All reject |
 
+---
+
+### Promise.allSettled — reports every outcome, never rejects
+
+```js
+const uploadPhoto = Promise.resolve("Photo uploaded");
+const uploadVideo = Promise.reject("Video file too large");
+
+Promise.allSettled([uploadPhoto, uploadVideo])
+  .then(results => console.log(results));
+
+// [
+//   { status: "fulfilled", value: "Photo uploaded" },
+//   { status: "rejected",  reason: "Video file too large" }
+// ]
+```
+
+Use when you want to know the result of **every** operation regardless of failures — e.g. a batch upload where partial success is fine.
+
+---
+
+### Promise.all — all-or-nothing, fails fast
+
+```js
+const fetchUserData  = Promise.resolve({ id: 1, name: "Alice" });
+const fetchUserPosts = Promise.resolve(["Post 1", "Post 2"]);
+const brokenAPI      = Promise.reject("Network Error!");
+
+// ✅ Scenario A: everything succeeds
+Promise.all([fetchUserData, fetchUserPosts])
+  .then(results => console.log("Success:", results))
+  .catch(err    => console.log("Failed:", err));
+// Output: Success: [{ id: 1, name: "Alice" }, ["Post 1", "Post 2"]]
+
+// ❌ Scenario B: one fails — the whole thing rejects immediately
+Promise.all([fetchUserData, brokenAPI])
+  .then(results => console.log(results))
+  .catch(err    => console.log("Failed:", err));
+// Output: Failed: Network Error!  ← stops as soon as brokenAPI rejects
+```
+
+Use when **all results are required** — e.g. loading a page that needs user data AND permissions before rendering.
+
+---
+
+### Promise.race — first to settle wins (success or failure)
+
+```js
+const downloadImage = new Promise(resolve => setTimeout(() => resolve("Image downloaded"), 500));
+const timeoutError  = new Promise((_, reject) => setTimeout(() => reject("Too slow!"), 200));
+
+Promise.race([downloadImage, timeoutError])
+  .then(winner => console.log("Won:", winner))
+  .catch(loser => console.log("Lost:", loser));
+// Output: Lost: Too slow!
+// Why? timeoutError settled at 200ms, beating the image download at 500ms.
+```
+
+Use for **timeout patterns** — race a real request against a reject-after-N-ms Promise to enforce a deadline.
+
+---
+
+### Promise.any — first to FULFILL wins, ignores individual rejections
+
+```js
+const slowServer   = new Promise(resolve => setTimeout(() => resolve("Data from Server B"), 1000));
+const fastServer   = new Promise(resolve => setTimeout(() => resolve("Data from Server A"), 100));
+const brokenServer = Promise.reject("Server C crashed");
+
+// ✅ Scenario A: at least one works
+Promise.any([slowServer, fastServer, brokenServer])
+  .then(first => console.log(first))
+  .catch(err  => console.log(err));
+// Output: "Data from Server A"  ← fastest successful server wins
+
+// ❌ Scenario B: ALL fail — throws AggregateError
+Promise.any([brokenServer, Promise.reject("Server D offline")])
+  .then(res => console.log(res))
+  .catch(err => {
+    console.log(err.name);   // AggregateError
+    console.log(err.errors); // ["Server C crashed", "Server D offline"]
+  });
+```
+
+Use for **redundant requests** — fire to multiple servers, use whichever responds first.
+
+---
+
 ### allSettled result shape
 
 ```js
