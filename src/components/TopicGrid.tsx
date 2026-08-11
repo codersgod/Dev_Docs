@@ -6,6 +6,7 @@ import type { SkillData, Chapter, Topic } from '@/types';
 
 const SKILL_COLORS: Record<string, string> = {
   javascript: '#F7DF1E',
+  nodejs: '#5FA04E',
   react: '#61DAFB',
   typescript: '#3178C6',
   nextjs: '#e2e8f0',

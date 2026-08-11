@@ -9,6 +9,7 @@ interface Skill {
 
 const SKILLS: Skill[] = [
   { id: 'javascript', label: 'JavaScript', badge: 'JS', color: '#F7DF1E' },
+  { id: 'nodejs',     label: 'Node.js',    badge: 'Nd', color: '#5FA04E' },
   { id: 'react',      label: 'React.js',   badge: 'Re', color: '#61DAFB' },
   { id: 'typescript', label: 'TypeScript', badge: 'TS', color: '#3178C6' },
   { id: 'nextjs',     label: 'Next.js',    badge: 'N⃤',  color: '#e2e8f0' },
