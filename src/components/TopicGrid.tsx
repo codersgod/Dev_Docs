@@ -54,7 +54,7 @@ function ChapterCard({ chapter, skill, accentColor }: ChapterCardProps) {
       <div className="flex items-center gap-2 mb-4">
         <div
           className="w-1 h-4 rounded-full flex-shrink-0"
-          style={{ background: accentColor + '60' }}
+          style={{ background: accentColor }}
         />
         <h2 className="text-neonPurple/80 font-semibold text-sm leading-tight" style={{ textShadow: '0 0 10px rgba(180,77,255,0.5)' }}>{chapter.title}</h2>
       </div>

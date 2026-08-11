@@ -83,7 +83,7 @@ export default function SkillSidebar({ activeSkill, onSkillChange }: Props) {
                 <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-neonPurple rounded-r-full shadow-[0_0_12px_4px_rgba(180,77,255,0.9)]" />
               )}
               <span
-                className={`w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-bold flex-shrink-0 transition-all duration-200 border
+                className={`w-8 h-8 rounded-lg flex items-center justify-center text-[14px] font-bold flex-shrink-0 transition-all duration-200 border
                   ${isActive ? 'border-neonPurple/40' : 'border-white/[0.08]'}`}
                 style={{
                   background: isActive ? `${skill.color}18` : `${skill.color}0a`,
