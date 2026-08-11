@@ -12,8 +12,14 @@ description: "Single-threaded, event-driven model with non-blocking I/O and a ba
 
 Node.js uses a **single-threaded, event-driven architecture with non-blocking I/O**.
 
-While the main thread runs only one task at a time, it handles massive concurrency by immediately offloading slow work to a background worker pool rather than sitting idle and waiting.
-
+- **Single-Threaded**: Node.js **executes all JavaScript code on one single main thread** (using Google’s V8 engine). It avoids the high memory cost of creating a new thread for every user connection.
+ 
+- **Non-Blocking I/O**: When a **request requires disk or network access** (I/O), Node.js offloads it to the OS or a background C++ thread pool (libuv). The **main thread immediately handles the next request** without waiting for the data to return.
+ 
+- **Event-Driven**: The core engine runs a continuous Event Loop. This **loop constantly monitors for completed background tasks, system events, or incoming network requests, orchestrating when code executes**.
+ 
+- **Callbacks**: When an **asynchronous task finishes, its completion function (the callback) is pushed into a queue**. As soon as the main execution stack is empty, the Event Loop pulls the callback from the queue to process the returned data.
+---
 ## Why **single-threaded, event-driven architecture with non-blocking I/O** ?
 
 | Restaurant Element| Technical Component | What it does |
@@ -48,22 +54,24 @@ While the main thread runs only one task at a time, it handles massive concurren
         └─────────────────────┘
 ```
 
-### 1. Main Thread
-Runs all your JavaScript code. Manages the **Event Loop** — the scheduler that decides what runs next.
-
-### 2. Event Loop
-Listens for completed tasks, schedules callbacks, and delivers results back to your JS code. It is the heartbeat of Node.js.
-
-### 3. Non-Blocking I/O
-Instead of waiting for a database reply or file read, Node.js sends the request off and **immediately moves to the next task**. When the result arrives, the callback is queued and called later.
-
-### 4. Worker Pool (libuv)
-A C++ background pool that handles OS-level heavy work — file system operations, DNS lookups, cryptography. Results are handed back to the event loop when done.
-
+## Node.js Working Mechanism: 
+ 
+### **The Event Loop (The Coordinator)**
+- **Thread**: Main JavaScript Thread.
+- **Tasks**: **Runs your JavaScript logic**, handles if/else checks, manages timers (setTimeout), and **runs callbacks once background work finishes**.
+### **The Worker Pool (The Local Heavy Lifters)**
+- **Thread**: 4 background C++ threads (via libuv).
+- **Tasks**: Handles slow, blocking operations that require high CPU or hard drive usage. This includes **file management (fs)**, **password hashing/encryption (crypto)**, and **data compression (zlib)**.
+### **Libuv / OS Kernel (The Network Experts)**
+- **Thread**: No Node.js threads used (delegated natively to the Operating System).
+- **Tasks**: **Handles all network-based I/O**. This includes **database queries** (MySQL, MongoDB), external **API calls** (fetch), and maintaining active **web sockets**. 
+- The OS handles these in the background and alerts Node.js when data arrives.
+---
 ## Why single-threaded works at scale
 
 Node.js scales because it **never idles**. While one request waits for a database, the main thread is already serving ten more requests. I/O latency (milliseconds) is handled in the background; the JS thread only performs CPU work (nanoseconds).
 
+---
 ## Folder Structure
 - **Controller Layer**: Handles API routes (Express), validates input, returns HTTP responses.
 - **Service Layer**: Executes core business logic; isolated from HTTP and database details.
