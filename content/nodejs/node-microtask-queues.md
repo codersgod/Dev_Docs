@@ -12,11 +12,12 @@ description: "process.nextTick() and Promise queues between every event loop pha
 
 Node.js has two important microtask queues:
 
-- `process.nextTick()` queue
-- Promise microtask queue (`.then`, `await` continuation)
+- **`process.nextTick()` Queue**: Holds callbacks scheduled by process.nextTick(). This has the absolute highest priority in the asynchronous lifecycle.
+- **Promises Microtask Queue**: Holds resolved Promise callbacks (e.g., .then(), .catch(), async/await continuations)
 
 These run between event loop phases.
 
+---
 ## Priority
 
 `process.nextTick()` runs before Promise microtasks.

@@ -13,6 +13,24 @@ description: "Sync vs async methods, directory streams, and fs.watch()."
 `fs` and `fs/promises` provide file and directory operations in Node.js (allows you to interact with your computer's files). 
 - supports both `synchronous (blocking)` and `asynchronous (non-blocking)` methods to read, write, update, rename, copy, and delete files.
 
+## Where to use it
+- **Configuration**: Reading .json or .env files to boot up application settings.
+- **Logging**: Writing real-time error messages and user activity logs into .log text files.
+- **File Uploads**: Saving profile pictures, PDFs, or videos uploaded by users onto a web server.
+
+```js
+import fs from 'node:fs/promises';
+
+// 1. Write data to a new file
+await fs.writeFile('note.txt', 'Hello World!');
+
+// 2. Read data back from the file (specify 'utf8' encoding to get text, not a raw Buffer!)
+const content = await fs.readFile('note.txt', 'utf8');
+
+console.log(content); // Output: Hello World!
+
+```
+
 ## Sync vs Async
 
 - Sync APIs block the event loop (`readFileSync`).

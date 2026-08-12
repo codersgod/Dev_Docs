@@ -7,7 +7,7 @@ description: "Loaded modules are cached in require.cache — acting like a singl
 ---
 
 # Module Caching
-
+Module Caching is a performance feature in Node.js where a file is executed exactly once the first time it is loaded. Node.js stores the exported result in a memory cache.
 ## How it works
 
 The first time you `require()` a module:
@@ -67,4 +67,4 @@ Useful in tests when you need a fresh module state between test cases.
 
 ## ESM caching
 
-ESM also caches modules, but the cache is managed by the engine's module graph — you cannot manually clear it at runtime.
+ESM also caches modules, but the cache is managed by the engine's module graph — **you cannot manually clear it at runtime**.

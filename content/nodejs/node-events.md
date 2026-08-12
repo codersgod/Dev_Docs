@@ -14,6 +14,14 @@ description: "Custom event listeners, .on(), .once(), and listener memory leaks.
 - **Publish (emit)**: Triggers a named event and sends data to any listeners.
 - **Subscribe (on)**: Listens for a named event and runs a callback function when it is triggered.
 
+It allows different parts of an application to communicate asynchronously by sending (emitting) and reacting to (listening for) named signals.
+
+## Why use EventEmitter?
+- **Decoupling**: Different parts of an application can communicate without needing to know about each other directly.
+- **Asynchronous**: Events can be emitted and handled asynchronously, allowing for non-blocking operations.
+
+At its core, an EventEmitter is a system-wide notification and alert broadcaster.
+
 ## Example
 
 ```js
@@ -21,12 +29,15 @@ import { EventEmitter } from 'node:events';
 
 const bus = new EventEmitter();
 
-bus.on('ready', () => console.log('ready with .on'));
-bus.once('init', () => console.log('init once'));
+bus.on('ready', (user, status) => console.log(`🔄 [ready] ${user}: ${status}`));
+bus.once('init', ({ port }) => console.log(`🚀 [init] Port: ${port}`));
+// Emit events
+bus.emit('ready', 'Alice', 'online');
+bus.emit('init', { port: 8080 });
+//2nd call to init is ignored because .once() was used
+bus.emit('ready', 'Bob', 'away');
+bus.emit('init', { port: 9000 }); // Ignored 
 
-bus.emit('ready');
-bus.emit('init');
-bus.emit('init'); // not called again
 ```
 
 ## Memory leak caution

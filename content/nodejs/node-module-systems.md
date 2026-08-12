@@ -16,12 +16,23 @@ The original Node.js module system. Synchronous, runtime-evaluated.
 
 ```js
 // math.js
-function add(a, b) { return a + b; }
-module.exports = { add };
+// Individual exports
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
+
+// Package them all together onto module.exports
+module.exports = { add, sub, defaultName: 'SuperCalc'}; // Acts as your default value
 
 // main.js
-const { add } = require('./math');
-console.log(add(2, 3)); // 5
+// Import everything as one object
+const math = require('./math.js');
+
+console.log(math.defaultName); // Output: SuperCalc
+console.log(math.add(2, 3));   // Output: 5
+
+// Alternative: Destructure individual items immediately
+const { add, defaultName } = require('./math.js');
+
 ```
 
 - `require()` is synchronous — returns the cached export object.
@@ -33,11 +44,19 @@ The official JS standard. Static, asynchronous, tree-shakeable.
 
 ```js
 // math.mjs
-export function add(a, b) { return a + b; }
+// Individual (named) exports
+export const add = (a, b) => a + b;
+export const sub = (a, b) => a - b;
+
+// Default export (Only ONE per file)
+const calculatorName = 'SuperCalc';
+export default calculatorName;
 
 // main.mjs
-import { add } from './math.mjs';
-console.log(add(2, 3)); // 5
+import calcName, { add, sub } from './math.mjs';
+console.log(calcName); // Output: SuperCalc
+console.log(add(2, 3)); // Output: 5
+console.log(sub(5, 3)); // Output: 2
 ```
 
 - Use `.mjs` extension or set `"type": "module"` in `package.json`.

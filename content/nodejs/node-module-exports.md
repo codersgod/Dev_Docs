@@ -80,4 +80,37 @@ module.exports = class UserService { ... };
 ## The Golden Rule
 
 Use `exports.name = ...` to attach multiple properties or functions.
-Use `module.exports = ...` to export a single entity (like a class, function, or object).
+Use `module.exports = ...` to export a single entity (like a class, function, or object). 
+
+```js
+// exports: Named exports
+exports.PI = 3.14159;
+exports.TAX_RATE = 0.18;
+exports.calculateTotal = (price) => price + (price * exports.TAX_RATE);
+//==============================================================================
+// module.exports: Default export
+//class example
+module.exports = class ShoppingCart {
+  constructor() {
+    this.items = [];
+  }
+  addItem(item) {
+    this.items.push(item);
+  }
+};
+
+//function example() { return 'This is a default export'; }
+const crypto = require('node:crypto');
+function hashPassword(password) {
+    return crypto.createHash('sha256').update(password).digest('hex');
+}
+module.exports = hashPassword;
+
+//object example
+const config = {
+  port: 3000,
+  dbUrl: 'mongodb://localhost:27017/myapp',
+  secretKey: 'supersecret'
+};
+module.exports = config;
+```

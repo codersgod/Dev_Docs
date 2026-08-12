@@ -12,29 +12,32 @@ description: "Usage constraints in ESM vs CommonJS modules."
 
 `await` used directly at the module's top level — outside any `async` function.
 
-## ESM — supported
+## ESM — supported / CommonJS — not supported
 
 ```js
-// data.mjs  (or "type": "module" in package.json)
+// ====== ESM (Supported) ======
+// Filename: data.mjs (or set "type": "module" in package.json)
+
 const response = await fetch('https://api.example.com/data');
 const data = await response.json();
-export { data };
-```
 
-The module pauses loading until the awaited value resolves. Importers automatically wait.
+export { data }; 
+// Note: Importers will automatically pause and wait until this resolves.
 
-## CommonJS — not supported
 
-```js
-// ❌ This throws in CJS
-const data = await fetch('...');
-```
+// ====== CommonJS (NOT Supported) ======
+// Filename: data.js (Legacy format)
 
-Workaround: wrap in an IIFE:
+// ❌ This throws a SyntaxError: 'await' is only valid in async functions
+const data = await fetch('https://api.example.com/data'); 
 
-```js
+
+// ====== CommonJS Workaround ======
+// Use an Asynchronous IIFE wrapper to make it work:
+
 (async () => {
-  const data = await fetch('...');
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
   console.log(data);
 })();
 ```
@@ -56,4 +59,11 @@ export { db };
 ## Key rules
 
 - Only works in `.mjs` files or when `"type": "module"` is set in `package.json`.
+- If you have a standard index.js file, you just need to add one line to your project's package.json file:
+
+```json
+"type": "module"
+```
+
+Once that is added, every standard .js file in your project automatically gains support for top-level await.
 - A slow top-level await blocks all importers — keep startup logic fast.

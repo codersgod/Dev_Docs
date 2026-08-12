@@ -29,9 +29,16 @@ const events  = require('events');   // EventEmitter
 - Prefix with `node:` to be explicit (recommended):
 
 ```js
+// Node.js ESM syntax
 import { readFile } from 'node:fs/promises';
+// CommonJS syntax
+const { readFile } = require('node:fs/promises');
 ```
+### The Choice Matrix
 
+- Use `import` if you are writing modern ESM (`.mjs` files or have `"type": "module"` in your `package.json`).
+- Use `require` if you are writing traditional CommonJS (standard `.js` files without a modified `package.json`).
+---
 ### 2. Local Modules
 
 Files you write within your project. Identified by a relative path starting with `./` or `../`.
