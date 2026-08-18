@@ -746,12 +746,12 @@
         "id": "node-fundamentals",
         "title": "1. Node.js Fundamentals",
         "topics": [
-           {
+          {
             "name": "What is Node.js",
             "slug": "node-what-is-nodejs",
             "desc": "Open-source JS runtime built on V8 for running JavaScript outside the browser."
           },
-           {
+          {
             "name": "Node.js Architecture",
             "slug": "node-overview-architecture",
             "desc": "Single-threaded, event-driven model with non-blocking I/O and a background thread pool."
@@ -776,12 +776,11 @@
             "slug": "node-philosophy",
             "desc": "Small core, fast startup, modular design — complexity lives in npm packages."
           },
-         
           {
             "name": "RAM vs I/O Latency",
             "slug": "node-io-latency",
             "desc": "Why Node.js is optimized for I/O-heavy tasks — eliminating CPU idle time."
-          }         
+          }
         ]
       },
       {
@@ -1082,6 +1081,423 @@
             "name": "PM2 Process Manager",
             "slug": "node-pm2",
             "desc": "Keeping apps alive in production with PM2 — clustering, log rotation, auto-restart."
+          }
+        ]
+      }
+    ]
+  },
+  "expressjs": {
+    "title": "Express.js",
+    "icon": "Ex",
+    "color": "#5FA04E",
+    "description": "Fast, unopinionated, minimalist web framework for Node.js.",
+    "chapters": [
+      {
+        "id": "expressjs-installation-setup",
+        "title": "1. Installation & Environment Setup",
+        "topics": [
+          {
+            "name": "Prerequisites",
+            "slug": "expressjs-setup-prerequisites",
+            "desc": "Verifying Node.js and npm installation in your local environment."
+          },
+          {
+            "name": "Project Setup & Installation",
+            "slug": "expressjs-setup-and-installation",
+            "desc": "Initializing a package.json file and downloading the Express.js framework into your project."
+          },
+          {
+            "name": "Environment Variables",
+            "slug": "expressjs-setup-env-variables",
+            "desc": "Securing credentials using .env files and the dotenv package."
+          },
+          {
+            "name": "Node.js vs Express.js",
+            "slug": "expressjs-node-vs-express",
+            "desc": "Understanding the fundamental differences, responsibilities, and relationship between the runtime and the framework."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-core-architecture",
+        "title": "2. Core Architecture & HTTP Fundamentals",
+        "topics": [
+          {
+            "name": "The app Object",
+            "slug": "expressjs-arch-app-object",
+            "desc": "Creating, configuring, and booting the server instance via app.listen()."
+          },
+          {
+            "name": "Req/Res Objects",
+            "slug": "expressjs-arch-req-res-objects",
+            "desc": "Mastering req.body, req.params, and req.query to capture incoming data."
+          },
+          {
+            "name": "HTTP Responses",
+            "slug": "expressjs-arch-http-responses",
+            "desc": "Sending data back using res.status(), res.json(), and res.send()."
+          },
+          {
+            "name": "The Request-Response Lifecycle",
+            "slug": "expressjs-arch-lifecycle",
+            "desc": "Tracking how a request travels from client click to server response."
+          },
+          {
+            "name": "REST API Architecture",
+            "slug": "expressjs-arch-rest-api",
+            "desc": "Understanding RESTful constraints, resource-based URLs, stateless design, and standard HTTP method mapping."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-routing-systems",
+        "title": "3. Routing Systems",
+        "topics": [
+          {
+            "name": "Basic Routing",
+            "slug": "expressjs-routing-basic",
+            "desc": "Mapping standard HTTP verbs (GET, POST, PUT, DELETE) to specific URLs."
+          },
+          {
+            "name": "Express Router",
+            "slug": "expressjs-routing-router-object",
+            "desc": "Splitting routes into dedicated, modular files like authRoutes.js."
+          },
+          {
+            "name": "Dynamic Routes",
+            "slug": "expressjs-routing-dynamic-wildcards",
+            "desc": "Using route parameters and wildcards to catch variable IDs or set up 404 pages."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-middleware",
+        "title": "4. Middleware (The Heart of Express)",
+        "topics": [
+          {
+            "name": "What is Middleware",
+            "slug": "expressjs-middleware-introduction",
+            "desc": "The architectural concept of middleware functions, how they intercept requests, and the anatomy of the req, res, next lifecycle."
+          },
+          {
+            "name": "Execution Order",
+            "slug": "expressjs-middleware-execution-order",
+            "desc": "Understanding how the sequence of app-level vs. router-level middleware impacts data flow."
+          },
+          {
+            "name": "Built-in Middleware",
+            "slug": "expressjs-middleware-builtin-parsers",
+            "desc": "Implementing standard incoming data parsers like express.json() and express.urlencoded()."
+          },
+          {
+            "name": "Static Assets",
+            "slug": "expressjs-middleware-static-assets",
+            "desc": "Serving images, CSS, and HTML files automatically using express.static()."
+          },
+          {
+            "name": "Custom Middleware",
+            "slug": "expressjs-middleware-custom-functions",
+            "desc": "Writing your own functions using the standard (req, res, next) footprint."
+          },
+          {
+            "name": "Third-Party Middleware",
+            "slug": "expressjs-middleware-third-party",
+            "desc": "Integrating essential utilities like cors, morgan, and helmet."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-global-error-handling",
+        "title": "5. Global Error Handling",
+        "topics": [
+          {
+            "name": "Sync vs. Async Errors",
+            "slug": "expressjs-errors-sync-vs-async",
+            "desc": "Catching crashes inside standard logic versus asynchronous database calls."
+          },
+          {
+            "name": "Error-Handling Middleware",
+            "slug": "expressjs-errors-middleware-syntax",
+            "desc": "Writing specialized fallback middleware using the four-argument (err, req, res, next) syntax."
+          },
+          {
+            "name": "Async Wrappers",
+            "slug": "expressjs-errors-async-wrappers",
+            "desc": "Using packages like express-async-errors to eliminate tedious try/catch blocks."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-authentication-security",
+        "title": "6. Authentication & Security",
+        "topics": [
+          {
+            "name": "Auth Strategies",
+            "slug": "expressjs-auth-cookie-vs-token",
+            "desc": "Comparing cookie/session-based authentication against token-based stateless architecture."
+          },
+          {
+            "name": "JWT Implementation",
+            "slug": "expressjs-auth-jwt-middleware",
+            "desc": "Generating JSON Web Tokens on login and verifying them via custom protection middleware."
+          },
+          {
+            "name": "Password Hashing",
+            "slug": "expressjs-auth-bcrypt-encryption",
+            "desc": "Offloading secure credential encryption to the bcrypt library."
+          },
+          {
+            "name": "Rate Limiting",
+            "slug": "expressjs-auth-rate-limiting",
+            "desc": "Protecting endpoints against brute-force and DDoS attacks using express-rate-limit."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-database-integration",
+        "title": "7. Database Integration & Architecture",
+        "topics": [
+          {
+            "name": "MVC Pattern",
+            "slug": "expressjs-db-mvc-pattern",
+            "desc": "Structuring code logically by dividing it into Models, Views, and Controllers."
+          },
+          {
+            "name": "ORM/ODM Tools",
+            "slug": "expressjs-db-orm-odm-tools",
+            "desc": "Connecting Express to databases using Mongoose, Prisma, or Sequelize."
+          }
+        ]
+      },
+      {
+        "id": "expressjs-advanced-production",
+        "title": "8. Advanced Production Topics",
+        "topics": [
+          {
+            "name": "File Uploads",
+            "slug": "expressjs-prod-file-uploads-multer",
+            "desc": "Handling multipart form data and binary files using multer."
+          },
+          {
+            "name": "Performance",
+            "slug": "expressjs-prod-performance-compression",
+            "desc": "Optimizing network payload sizes using the compression middleware layer."
+          },
+          {
+            "name": "Production Proxies",
+            "slug": "expressjs-prod-nginx-reverse-proxies",
+            "desc": "Understanding the role of production reverse proxies like Nginx ahead of Node."
+          },
+          {
+            "name": "API Testing",
+            "slug": "expressjs-prod-testing-jest-supertest",
+            "desc": "Writing robust automated integration tests for your endpoints using Jest and Supertest."
+          }
+        ]
+      }
+    ]
+  },
+  "systemDesign": {
+    "title": "System Design for Senior Frontend Engineers",
+    "icon": "FED-SD",
+    "color": "#3178C6",
+    "description": "Mastering high-performance client-server architectures, data synchronization, and frontend system design case studies.",
+    "chapters": [
+      {
+        "id": "fed-sd-foundations",
+        "title": "1. Core Architectural Pillars",
+        "topics": [
+          {
+            "name": "System Designing Fundamentals",
+            "type": "HLD",
+            "slug": "fed-basics-what-is-system-design",
+            "desc": "Defining how decoupled client-server components interoperate to bridge business goals with production infrastructure, handling scalability, fault tolerance, and speed trade-offs."
+          },
+          {
+            "name": "Functional vs. Non-Functional Requirements",
+            "type": "LLD",
+            "slug": "fed-basics-functional-nonfunctional",
+            "desc": "Isolating product feature specifications from core engineering constraints like performance thresholds, security vectors, offline resilience, and accessibility."
+          },
+          {
+            "name": "High-Level Design (HLD) vs. Low-Level Design (LLD)",
+            "type": "HLD",
+            "slug": "fed-basics-hld-vs-lld-architectures",
+            "desc": "Contrasting macro system topography layouts (CDNs, proxies, network lines) with granular micro engineering configurations (schemas, state stores, caching rules)."
+          }
+        ]
+      },
+      {
+        "id": "fed-client-server-data",
+        "title": "2. Client-Server Data & API Orchestration",
+        "topics": [
+          {
+            "name": "API Paradigms (REST vs. GraphQL)",
+            "type": "HLD",
+            "slug": "fed-proto-rest-graphql-tradeoffs",
+            "desc": "Evaluating over-fetching and under-fetching, query cost modeling, schema definitions, and client-side payload sizing trade-offs."
+          },
+          {
+            "name": "Real-Time Streams (WebSockets vs. SSE)",
+            "type": "HLD",
+            "slug": "fed-proto-websockets-sse-realtime",
+            "desc": "Choosing between bi-directional TCP communication (chat, collaboration) and one-way server-pushed HTTP streams (live feeds, telemetry)."
+          },
+          {
+            "name": "BFF (Backend-for-Frontend) Pattern",
+            "type": "HLD",
+            "slug": "fed-arch-bff-proxy-orchestration",
+            "desc": "Designing an orchestration proxy layer to handle data aggregation, payload trimming, and security mapping specifically for client viewports."
+          },
+          {
+            "name": "State Management & Server Synchronization",
+            "type": "LLD",
+            "slug": "fed-state-sync-cache-optimistic",
+            "desc": "Managing client-side cache persistence, optimistic UI updates, background polling, retry strategies, and pagination mechanics."
+          }
+        ]
+      },
+      {
+        "id": "fed-edge-infrastructure",
+        "title": "3. Global Edge Infrastructure & High-Performance Caching",
+        "topics": [
+          {
+            "name": "CDN Architecture & Routing Layers",
+            "type": "HLD",
+            "slug": "fed-scale-cdn-caching-routing",
+            "desc": "Optimizing asset delivery networks via global Anycast routing, edge cache invalidations, and geographical proximity distribution."
+          },
+          {
+            "name": "Edge Computing Topologies",
+            "type": "HLD",
+            "slug": "fed-edge-compute-isolate-runtimes",
+            "desc": "Moving execution logic (localization, lightweight caching, auth checking) to global V8 isolate edge runtime workers."
+          },
+          {
+            "name": "Client-Side & HTTP Caching",
+            "type": "LLD",
+            "slug": "fed-cache-browser-http-headers",
+            "desc": "Mastering Cache-Control headers, ETag validation loops, Service Workers caching, and browser storage mechanics."
+          }
+        ]
+      },
+      {
+        "id": "fed-ui-architecture-scaling",
+        "title": "4. UI Runtime Scalability & Modular Frameworks",
+        "topics": [
+          {
+            "name": "Distributed Rendering Pipelines",
+            "type": "HLD",
+            "slug": "fed-render-ssr-ssg-hydration",
+            "desc": "Analyzing client-side rendering (CSR), server-side rendering (SSR), static generation (SSG), hydration, and island architectures."
+          },
+          {
+            "name": "Micro-Frontends & Module Federation",
+            "type": "HLD",
+            "slug": "fed-arch-micro-frontends-federation",
+            "desc": "Splitting massive applications into autonomous, domain-driven micro-apps using runtime integration, Module Federation, and shared dependency orchestration."
+          },
+          {
+            "name": "DOM Scalability & List Virtualization",
+            "type": "LLD",
+            "slug": "fed-perf-dom-virtualization-infinite",
+            "desc": "Designing virtual list viewport windows to handle infinite scroll rendering pipelines without crashing browser memory constraints."
+          },
+          {
+            "name": "Runtime Performance Profiling & Optimization",
+            "type": "LLD",
+            "slug": "fed-perf-runtime-profiling-optimization",
+            "desc": "Profiling and optimizing runtime performance, identifying bottlenecks, and implementing efficient rendering and computation strategies."
+          }
+        ]
+      },
+      {
+        "id": "fed-security-mitigations",
+        "title": "5. Client-Side Security & Network Hardening",
+        "topics": [
+          {
+            "name": "Web Security Mitigations",
+            "type": "LLD",
+            "slug": "fed-sec-xss-csrf-cors-cookies",
+            "desc": "Defending applications against XSS vectors, CSRF exploits, CORS preflight blocking, and implementing secure HttpOnly cookie configurations."
+          }
+        ]
+      },
+      {
+        "id": "fed-case-studies-infrastructure",
+        "title": "6. Case Studies: High-Throughput & Performance Systems",
+        "topics": [
+          {
+            "name": "Design a Search Autocomplete Typeahead System",
+            "type": "Both",
+            "slug": "fed-interview-typeahead-autocomplete",
+            "desc": "Designing a high-throughput search input handling client throttling (debouncing), local caching, Trie data, and keyboard navigation."
+          },
+          {
+            "name": "Design an Image/Video Social Media Feed",
+            "type": "Both",
+            "slug": "fed-interview-infinite-media-feed",
+            "desc": "Architecting an infinite-scroll feed layout optimizing lazy media loading, responsive images, content prefetching, and progressive degradation."
+          },
+          {
+            "name": "Design a Frontend Web Analytics SDK",
+            "type": "Both",
+            "slug": "fed-interview-analytics-tracking-sdk",
+            "desc": "Building a lightweight script library capturing click streams and performance telemetry without blocking application main execution lines."
+          }
+        ]
+      },
+      {
+        "id": "fed-case-studies-complex-state",
+        "title": "7. Case Studies: Real-Time States & Coordination",
+        "topics": [
+          {
+            "name": "Design a Real-Time Chat Application",
+            "type": "Both",
+            "slug": "fed-interview-chat-ui-architecture",
+            "desc": "Architecting persistent communication states handling socket reconnections, message delivery queues, and local state management counters."
+          },
+          {
+            "name": "Design a Collaborative Rich-Text Document Editor",
+            "type": "Both",
+            "slug": "fed-interview-collaborative-text-editor",
+            "desc": "Designing an editor workspace handling highly concurrent inputs, cursor positions, and resolving editing conflict models (CRDTs/OT)."
+          }
+        ]
+      },
+      {
+        "id": "fed-dx-observability-ops",
+        "title": "8. Frontend Operations, Observability & DX",
+        "topics": [
+          {
+            "name": "Real User Monitoring (RUM) & User Telemetry",
+            "type": "HLD",
+            "slug": "fed-ops-rum-telemetry-cwv",
+            "desc": "Tracking and auditing real production Core Web Vitals (LCP, INP, CLS) and monitoring errors via error tracking frameworks."
+          },
+          {
+            "name": "Monorepos & Scalable Build Pipelines",
+            "type": "HLD",
+            "slug": "fed-ops-monorepos-build-pipelines",
+            "desc": "Scaling multi-team codebases using tools like Turborepo or Nx, managing incremental caching, and optimizing code boundaries."
+          },
+          {
+            "name": "Canary & Feature Flag Deployment Systems",
+            "type": "HLD",
+            "slug": "fed-ops-feature-flags-canary",
+            "desc": "Designing client evaluation models to safely decouple feature activations, manage canary allocations, and run targeted A/B test groups."
+          }
+        ]
+      },
+      {
+        "id": "fed-case-studies-Interview",
+        "title": "9. General Interview Case study asked",
+        "topics": [
+          {
+            "name":"General Interview Case study asked",
+            "type":"HLD",
+            "slug":"general-interview-question-asked",
+            "desc":"Frontend System Design Case Studies: Architectural Summary Handbook - Interviews questions generally asked"
           }
         ]
       }
