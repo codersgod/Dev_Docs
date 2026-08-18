@@ -153,7 +153,7 @@ A media streaming engine optimizing audio chunk caching, configuring responsive 
 
 ### Architectural Definition
 A high-concurrency event reservation canvas rendering massive structural seating layout grids and managing rapid real-time seat lock state synchronization models.
-![ Book My Show](/bookMyShow_HLD.png)
+![ Book My Show](/BookMyShow_HLD.png)
 ### LLD Patterns & Tech Stack
 *   **Canvas Interactivity Engine**: Quadtree geometric lookup trees mapping click coordinate vectors directly to complex stadium layout indices.
 *   **Short-Polling Transaction Lock**: High-speed, lightweight REST-based synchronization queues processing optimistic reservation locks.
@@ -169,7 +169,7 @@ A high-concurrency event reservation canvas rendering massive structural seating
 
 ### Architectural Definition
 An advanced multimedia streaming interface applying dynamic video chunk decoding, context-aware network bitrate optimizations, and memory-insulated playback buffers.
-![ Netflix Media Player Interface](/netflix_HLD.png)
+![ Netflix Media Player Interface](/HLD_netflix.png)
 
 ### LLD Patterns & Tech Stack
 *   **Encrypted Media Extensions (EME)**: Content decryption frameworks controlling secure digital rights management (DRM) pipelines between CDM and hardware decoding layers.
@@ -186,6 +186,7 @@ An advanced multimedia streaming interface applying dynamic video chunk decoding
 
 ### Architectural Definition
 A hyper-frequent market telemetry terminal rendering real-time ticker feeds, optimizing visual rendering cycles via requestAnimationFrame, and preserving low INP thresholds.
+![Stock Exchange Real-Time Terminal](/HLD_stock.png)
 
 ### LLD Patterns & Tech Stack
 *   **Binary WebSockets**: Compact network pipelines processing lightweight binary payloads (e.g., Protocol Buffers, ArrayBuffers) to minimize data frame size.
@@ -202,7 +203,7 @@ A hyper-frequent market telemetry terminal rendering real-time ticker feeds, opt
 
 ### Architectural Definition
 An enterprise-grade real-time video communications interface running multi-peer media stream topologies, layout allocation matrices, and intelligent pipeline optimization systems.
-
+![Zoom Meeting Room](/HLD_zoom_call.png)
 ### LLD Patterns & Tech Stack
 *   **WebRTC Stream Pipeline**: Framework controlling secure audio, video, and data channels across active network sessions.
 *   **RTCPeerConnection Orchestrator**: Session management logic handling ICE candidate negotiation and dynamic network path routing.
