@@ -40,7 +40,7 @@ export default function OnPageIndex({ headings }: Props) {
       </p>
       <ul className="space-y-0.5">
         {headings.map(({ id, text, level }) => (
-          <li key={id}>
+          <li key={id + "_" + Math.random()}>
             <a
               href={`#${id}`}
               className={`block text-[13px] py-1 px-2 rounded-md transition-all duration-150 leading-snug
