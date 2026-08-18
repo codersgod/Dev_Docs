@@ -9,10 +9,12 @@ interface Skill {
 
 const SKILLS: Skill[] = [
   { id: 'javascript', label: 'JavaScript', badge: 'JS', color: '#F7DF1E' },
-  { id: 'nodejs',     label: 'Node.js',    badge: 'Nd', color: '#5FA04E' },
   { id: 'react',      label: 'React.js',   badge: 'Re', color: '#61DAFB' },
+  { id: 'nodejs',     label: 'Node.js',    badge: 'Nd', color: '#5FA04E' },
+  { id: 'expressjs',     label: 'Express.js',    badge: 'Ex', color:'#83A7DB'},
   { id: 'typescript', label: 'TypeScript', badge: 'TS', color: '#3178C6' },
   { id: 'nextjs',     label: 'Next.js',    badge: 'N⃤',  color: '#e2e8f0' },
+  { id: 'systemDesign',     label: 'System Design',    badge: 'SD',  color: '#e2e8f0' },
 ];
 
 interface Props {
@@ -62,10 +64,6 @@ export default function SkillSidebar({ activeSkill, onSkillChange }: Props) {
           <Image src="/logos.png" alt="FED Notes" width={32} height={32} className="rounded-xl" />
           <span className="text-white font-bold text-sm tracking-tight">Dev Docs</span>
         </div>
-
-        <p className="text-textMuted text-[10px] font-medium uppercase tracking-widest px-2 mb-2">
-          Stacks
-        </p>
 
         {SKILLS.map((skill) => {
           const isActive = activeSkill === skill.id;
