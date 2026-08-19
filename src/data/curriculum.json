@@ -306,6 +306,22 @@
             "desc": "Sanitizing user inputs to counter modern XSS bypass vectors."
           }
         ]
+      },
+      {
+        "id": "js-interview-prep",
+        "title": "13. JavaScript Interview Preparation",
+        "topics": [
+          {
+            "name": "Common Interview Questions",
+            "slug": "js-interview-questions",
+            "desc": "Frequently asked JavaScript questions and best practices for answering them."
+          },
+          {
+            "name": "Coding Challenges",
+            "slug": "js-coding-challenges",
+            "desc": "Typical coding problems and strategies for solving them efficiently."
+          }
+        ]
       }
     ]
   },
