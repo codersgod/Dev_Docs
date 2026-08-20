@@ -10,9 +10,9 @@ playgroundTemplate: "state-sync"
 # State Management & Server Synchronization
 
 ## What is it?
-In simple terms, State Management and Server Synchronization is the **art of making sure that what a user sees on their screen perfectly matches what is actually saved inside your backend databases**—without making the app feel slow, frozen, or broken.
+In simple terms, `State Management` and `Server Synchronization` are the **art of making sure that what a user sees on their screen perfectly matches what is actually saved inside your backend databases**—without making the app feel slow, frozen, or broken.
 
-To master this for a system design interview, break it down into two separate jobs:
+To master this for a system design interview, ***break it down into two separate jobs***:
 - **State Management (The Memory):** How the client application (like a phone app or web browser) remembers data while the app is open.
 - **Server Synchronization (The Alignment):** How that local application talks to the backend to refresh its old data or send new changes up to the database.
 
@@ -20,9 +20,9 @@ To master this for a system design interview, break it down into two separate jo
 - **Speed (Optimistic Updates)**: The UI assumes success and updates instantly (e.g., hitting "Like" turns the icon red immediately). The server syncs quietly in the background, bypassing network lag.
 > - **The State Side:** The app instantly toggles local memory (e.g., isLiked false ➔ true) so the screen updates immediately.
 > - **The Sync Side:** Simultaneously, a background network call pushes this change upstream to update the server database.
-- **Freshness (Stale-While-Revalidate)**: The UI instantly ***displays old cached data*** so the user never stares at a blank loading screen, while a background request silently fetches and slides in the freshest updates.
+- **Freshness (Stale-While-Revalidate)**: The UI instantly ***displays old cached data*** so the user never stares at a blank loading screen, ***while a background request silently fetches and slides in the freshest updates.***
 - **Offline Reliability (Rollback & Clean Recovery)**: The local ***app safely saves user actions during actual network drops*** rather than throwing an error screen, it then gracefully waits for a stable synchronization window to push changes.
-- **Eliminates UI Bugs**: Prevents race conditions where slow network connections cause older data to overwrite newer updates.
+- **Eliminates UI Bugs**: `Prevents race conditions` where slow network connections cause older data to overwrite newer updates.
 ![State Management & Server Synchronization](/State_sync.png)
 ## 🔄 Process: How does it work? 
 - **Split Memory**: Separate temporary UI states (like toggles) from cached server records in local storage.
@@ -77,9 +77,9 @@ window.addEventListener('online', () => {
   flushOutboxQueue();
 });
 ```
-> 🗒️ Case Study: Instagram Feed & "Likes"
+>## 🗒️ Case Study: Instagram Feed & "Likes"
 
-**Core Metric: Perceived Performance (making the app feel instant and fully functional even during severe network drops).**
+**Core Metric: Perceived Performance** (making the app feel instant and fully functional even during severe network drops).
 > **Split Memory & Optimistic UI**
 > - **Implementation**: Double-tapping a photo updates the local state cache (isLiked = true) and turns the heart icon red within 16 milliseconds (one frame of rendering).
 > - **Result**: Bypasses network lag entirely, making user interactions feel immediate.
