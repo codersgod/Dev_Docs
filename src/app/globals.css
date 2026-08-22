@@ -29,7 +29,14 @@ code {
 
 /* ── Markdown Content Styles ───────────────────────────────────────── */
 .markdown-content {
-  max-width: 72ch;
+  max-width: auto; 
+}
+
+.main-heading {
+  background-image: linear-gradient(to right, rgb(75 32 107) 10%, rgb(67 45 91) 30%, rgb(14, 13, 18));
+  background-repeat: no-repeat;
+  padding: 10px;
+  border-radius: 0.5rem;
 }
 
 .md-h1,
@@ -39,6 +46,13 @@ code {
   font-weight: 700;
   line-height: 1.3;
   scroll-margin-top: 80px;
+  width: fit-content;
+  padding-bottom: 10px;
+  background-image: linear-gradient(to right, #f8c630 10%, #624c0a 40%, rgb(14, 13, 18));
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: bottom;
+  padding-right: 5rem;
 }
 
 .md-h1 {
@@ -48,11 +62,16 @@ code {
 }
 
 .md-h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  /* padding-bottom: 0.5rem; */
+  border-bottom: 0px;
+
+  border-radius: 0.3rem;
+  padding: 0.3rem 5rem 0.3rem 0.3rem;
+  background: linear-gradient(90deg, #f8c63099, #f8c6307a, transparent);
+  width: fit-content;
 }
 
 .md-h3 {
@@ -298,7 +317,8 @@ details[open] summary {
   color: rgb(180 77 255 / var(--tw-text-opacity, 1));
   margin-bottom: 1rem;
 }
-details:not([open]) summary{
+
+details:not([open]) summary {
   border: 1px solid rgba(255, 255, 255, 0.03);
   box-shadow: 0 0 0 1px rgba(180, 77, 255, 0.2), 0 0 8px rgba(180, 77, 255, 0.02);
 }
