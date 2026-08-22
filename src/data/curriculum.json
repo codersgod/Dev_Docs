@@ -659,8 +659,34 @@
     "description": "Typed superset of JavaScript for scalable applications.",
     "chapters": [
       {
+        "id": "ts-introduction",
+        "title": "1. Introduction & Environment Setup",
+        "topics": [
+          {
+            "name": "What is TypeScript?",
+            "slug": "what-is-typescript",
+            "desc": "Understanding why TypeScript exists as a typed superset of JavaScript."
+          },
+          {
+            "name": "Compilation Loop",
+            "slug": "compilation-loop",
+            "desc": "How the TypeScript Compiler (tsc) transforms .ts code into vanilla .js."
+          },
+          {
+            "name": "Configuring tsconfig.json",
+            "slug": "tsconfig-json",
+            "desc": "Setting up build options, target environments, and strict type-checking modes."
+          },
+          {
+            "name": "Package.json Integration & Build Tools",
+            "slug": "package-json-build-tools",
+            "desc": "Connecting TypeScript with modern bundlers like Vite, Webpack, and runtime engines like ts-node."
+          }
+        ]
+      },
+      {
         "id": "ts-basics",
-        "title": "1. Type Basics",
+        "title": "2. Type Basics",
         "topics": [
           {
             "name": "Primitive Types",
@@ -668,20 +694,98 @@
             "desc": "string, number, boolean, null, undefined, symbol, and bigint."
           },
           {
-            "name": "Interfaces & Types",
-            "slug": "interfaces-types",
-            "desc": "Defining object shapes, differences between interface and type alias."
+            "name": "Type Inference",
+            "slug": "type-inference",
+            "desc": "How TypeScript automatically guesses types without explicit annotations."
           },
           {
-            "name": "Generics",
-            "slug": "generics",
-            "desc": "Writing reusable, type-safe functions and components."
+            "name": "Literal Types",
+            "slug": "literal-types",
+            "desc": "Restricting values to exact exact strings, numbers, or booleans."
           }
         ]
       },
       {
-        "id": "ts-advanced",
-        "title": "2. Advanced Types",
+        "id": "ts-complex-structures",
+        "title": "3. Complex Data Structures",
+        "topics": [
+          {
+            "name": "Arrays",
+            "slug": "arrays",
+            "desc": "Typing homogenous structural lists using syntax like number[] or Array<string>."
+          },
+          {
+            "name": "Tuples",
+            "slug": "tuples",
+            "desc": "Working with fixed-length arrays containing strict ordered data types."
+          },
+          {
+            "name": "Enums",
+            "slug": "enums",
+            "desc": "Declaring readable numerical or string-based sets of named constants."
+          },
+          {
+            "name": "Readonly Arrays & Tuples",
+            "slug": "readonly-arrays-tuples",
+            "desc": "Using readonly array variations and const assertions to freeze collections against mutation."
+          }
+        ]
+      },
+      {
+        "id": "ts-functions-objects",
+        "title": "4. Functions & Object Structures",
+        "topics": [
+          {
+            "name": "Function Typing",
+            "slug": "function-typing",
+            "desc": "Defining strict parameter types, optional parameters, and function return values."
+          },
+          {
+            "name": "Function Overloads",
+            "slug": "function-overloads",
+            "desc": "Creating functions that accept multiple argument structures and deliver context-dependent return signatures."
+          },
+          {
+            "name": "Interfaces & Type Aliases",
+            "slug": "interfaces-types",
+            "desc": "Defining object shapes, structural typing, and differences between interfaces and type aliases."
+          },
+          {
+            "name": "Interface Extension & Merging",
+            "slug": "interface-extensions",
+            "desc": "Extending existing interfaces and declaration merging tricks."
+          },
+          {
+            "name": "Index Signatures",
+            "slug": "index-signatures",
+            "desc": "Typing dynamic structures where property names are unknown ahead of time."
+          }
+        ]
+      },
+      {
+        "id": "ts-dynamic-typing",
+        "title": "5. Dynamic Safety & Utility Types",
+        "topics": [
+          {
+            "name": "The Escape Hatches",
+            "slug": "escape-hatches",
+            "desc": "Safely handling unpredictable data with any, unknown, void, and never."
+          },
+          {
+            "name": "Type Assertions",
+            "slug": "type-assertions",
+            "desc": "Overriding compiler inference using the 'as' keyword and the non-null assertion operator safely."
+          },
+          {
+            "name": "Type Guards & Type Predicates",
+            "slug": "type-guards-predicates",
+            "desc": "Writing custom verification functions using the 'is' keyword to refine broad categories."
+          }
+        ]
+      },
+      {
+        "id": "ts-advanced-combinations",
+        "title": "6. Advanced Type Transformations",
         "topics": [
           {
             "name": "Union & Intersection",
@@ -689,14 +793,76 @@
             "desc": "Combining types with | and & for flexible type definitions."
           },
           {
-            "name": "Utility Types",
-            "slug": "utility-types",
-            "desc": "Partial, Required, Readonly, Pick, Omit, Record, and ReturnType."
-          },
-          {
             "name": "Type Narrowing",
             "slug": "type-narrowing",
-            "desc": "typeof, instanceof, discriminated unions, and type predicates."
+            "desc": "typeof, instanceof, discriminated unions, and control-flow based narrowing."
+          },
+          {
+            "name": "Generics",
+            "slug": "generics",
+            "desc": "Writing reusable, type-safe functions, classes, and components with constraints using extends."
+          },
+          {
+            "name": "Conditional Types",
+            "slug": "conditional-types",
+            "desc": "Introducing if/else logical flows inside type definitions to select types dynamically."
+          },
+          {
+            "name": "Mapped Types",
+            "slug": "mapped-types",
+            "desc": "Iterating over object keys to transform and generate new object structures automatically."
+          },
+          {
+            "name": "Template Literal Types",
+            "slug": "template-literal-types",
+            "desc": "Manipulating and generating complex custom string patterns directly inside your types."
+          }
+        ]
+      },
+      {
+        "id": "ts-utility-types",
+        "title": "7. Built-in Utility Types",
+        "topics": [
+          {
+            "name": "Structural Utilities",
+            "slug": "structural-utilities",
+            "desc": "Modifying existing types using Partial, Required, Readonly, and Record."
+          },
+          {
+            "name": "Filtering Utilities",
+            "slug": "filtering-utilities",
+            "desc": "Extracting properties using Pick, Omit, Exclude, and Extract."
+          },
+          {
+            "name": "Functional Utilities",
+            "slug": "functional-utilities",
+            "desc": "Capturing functional parameters and values via ReturnType and Parameters."
+          },
+          {
+            "name": "String Manipulation Utilities",
+            "slug": "string-utilities",
+            "desc": "Transforming literal types via built-in Uppercase, Lowercase, and Capitalize tools."
+          }
+        ]
+      },
+      {
+        "id": "ts-meta-programming",
+        "title": "8. Meta-Programming & OOP",
+        "topics": [
+          {
+            "name": "Classes & Access Modifiers",
+            "slug": "classes-modifiers",
+            "desc": "Implementing public, private, protected, and readonly rules in Object Oriented Programming."
+          },
+          {
+            "name": "Abstract Classes",
+            "slug": "abstract-classes",
+            "desc": "Creating non-instantiable base templates to enforce class blueprints across child modules."
+          },
+          {
+            "name": "Decorators",
+            "slug": "decorators",
+            "desc": "Adding structural metadata transformations to classes, methods, and properties."
           }
         ]
       }
@@ -1510,10 +1676,10 @@
         "title": "9. General Interview Case study asked",
         "topics": [
           {
-            "name":"General Interview Case study asked",
-            "type":"HLD",
-            "slug":"general-interview-question-asked",
-            "desc":"Frontend System Design Case Studies: Architectural Summary Handbook - Interviews questions generally asked"
+            "name": "General Interview Case study asked",
+            "type": "HLD",
+            "slug": "general-interview-question-asked",
+            "desc": "Frontend System Design Case Studies: Architectural Summary Handbook - Interviews questions generally asked"
           }
         ]
       }
